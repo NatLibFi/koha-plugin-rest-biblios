@@ -1,0 +1,6 @@
+{
+  "biblio_id": {
+    "type": "integer",
+    "description": "Internal biblio identifier"
+  }
+}

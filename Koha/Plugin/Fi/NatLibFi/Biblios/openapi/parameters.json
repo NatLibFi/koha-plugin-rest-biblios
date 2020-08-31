@@ -1,0 +1,5 @@
+{
+  "biblio_id_pp": {
+    "$ref": "parameters/biblio.json#/biblio_id_pp"
+  }
+}

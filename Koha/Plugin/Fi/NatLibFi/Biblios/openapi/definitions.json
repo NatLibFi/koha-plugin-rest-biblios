@@ -1,0 +1,8 @@
+{
+  "error": {
+    "$ref": "definitions/error.json"
+  },
+  "biblio": {
+    "$ref": "definitions/biblio.json"
+  }
+}

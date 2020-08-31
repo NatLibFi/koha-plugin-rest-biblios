@@ -1,9 +1,9 @@
 #!/bin/bash
 
-PM_FILE='Koha/Plugin/Fi/KohaSuomi/DI.pm'
+PM_FILE='Koha/Plugin/Fi/NatLibFi/Biblios.pm'
 DATE=`date +"%Y-%m-%d"`
 VERSION=`git log -1 --pretty=oneline --decorate | egrep -o "tag: v[0-9.]+" | sed -e "s/tag: v//"`
-RELEASE_FILE="koha-plugin-rest-di-${VERSION}.kpz"
+RELEASE_FILE="koha-plugin-rest-biblios-${VERSION}.kpz"
 if [ ! -z "$VERSION" ]
 then
   echo "Building release package ${RELEASE_FILE}"
