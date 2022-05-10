@@ -1,0 +1,3 @@
+---
+biblio_id_pp:
+  $ref: parameters/biblio.yaml#/biblio_id_pp

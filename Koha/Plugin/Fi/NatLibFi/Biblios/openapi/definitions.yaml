@@ -1,0 +1,5 @@
+---
+biblio:
+  $ref: definitions/biblio.yaml
+error:
+  $ref: definitions/error.yaml

@@ -1,0 +1,4 @@
+---
+biblio_id:
+  description: Internal biblio identifier
+  type: integer

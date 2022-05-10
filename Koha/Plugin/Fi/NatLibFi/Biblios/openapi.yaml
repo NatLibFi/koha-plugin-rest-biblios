@@ -1,0 +1,89 @@
+---
+swagger: "2.0"
+paths:
+  /biblios:
+    post:
+      operationId: addBiblio
+      produces:
+        - application/json
+      responses:
+        201:
+          description: Created a new biblio
+          schema:
+            $ref: openapi/definitions.yaml#/biblio
+        401:
+          description: Authentication required
+          schema:
+            $ref: openapi/definitions.yaml#/error
+        403:
+          description: Access forbidden
+          schema:
+            $ref: openapi/definitions.yaml#/error
+        406:
+          description: Not acceptable
+          schema:
+            description: Accepted content-types
+            items:
+              type: string
+            type: array
+        500:
+          description: Internal server error
+          schema:
+            $ref: openapi/definitions.yaml#/error
+        503:
+          description: Under maintenance
+          schema:
+            $ref: openapi/definitions.yaml#/error
+      tags:
+        - biblios
+      x-koha-authorization:
+        permissions:
+          editcatalogue: edit_catalogue
+      x-mojo-to: Fi::NatLibFi::Biblios::Biblios#add
+  "/biblios/{biblio_id}":
+    put:
+      operationId: updateBiblio
+      parameters:
+        - $ref: openapi/parameters.yaml#/biblio_id_pp
+      produces:
+        - application/json
+      responses:
+        204:
+          description: Updated biblio
+        401:
+          description: Authentication required
+          schema:
+            $ref: openapi/definitions.yaml#/error
+        403:
+          description: Access forbidden
+          schema:
+            $ref: openapi/definitions.yaml#/error
+        404:
+          description: Biblio not found
+          schema:
+            $ref: openapi/definitions.yaml#/error
+        406:
+          description: Not acceptable
+          schema:
+            description: Accepted content-types
+            items:
+              type: string
+            type: array
+        500:
+          description: Internal server error
+          schema:
+            $ref: openapi/definitions.yaml#/error
+        503:
+          description: Under maintenance
+          schema:
+            $ref: openapi/definitions.yaml#/error
+      tags:
+        - biblios
+      x-koha-authorization:
+        permissions:
+          editcatalogue: edit_catalogue
+      x-mojo-to: Fi::NatLibFi::Biblios::Biblios#update
+
+info:
+  title: Koha REST API plugin provides API support for modifying biblio records
+  version: "1"

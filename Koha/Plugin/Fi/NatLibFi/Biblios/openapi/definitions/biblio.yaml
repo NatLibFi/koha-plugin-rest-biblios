@@ -1,0 +1,6 @@
+---
+properties:
+  biblio_id:
+    description: Internal biblio identifier
+    type: integer
+type: object
