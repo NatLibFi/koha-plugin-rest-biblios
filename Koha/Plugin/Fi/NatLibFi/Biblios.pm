@@ -56,6 +56,10 @@ sub api_routes {
     my $schema = JSON::Validator::Schema::OpenAPIv2->new;
     my $spec = $schema->resolve($spec_dir . '/openapi.yaml');
 
+    if( $schema->errors && @{$schema->errors} ) {
+        die 'SCHEMA ERRORS: ' . join("\n", map { $_->message } @{$schema->errors}) . "\n";
+    }
+
     return $self->_convert_refs_to_absolute($spec->data->{'paths'}, 'file://' . $spec_dir . '/');
 }
 
