@@ -81,7 +81,7 @@ sub update {
             );
         }
 
-        my $no_error = C4::Biblio::ModBiblio( $record, $biblio->biblionumber, $biblio->frameworkcode );
+        my $no_error = C4::Biblio::ModBiblio( $record, $biblio->biblionumber, $biblio->frameworkcode,  { overlay_context => { source => 'koha-plugin-rest-biblios' } } );
 
         if ( $no_error ) {
             return $c->render(
