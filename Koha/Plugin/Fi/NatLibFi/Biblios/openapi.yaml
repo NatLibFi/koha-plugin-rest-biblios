@@ -3,7 +3,7 @@ swagger: "2.0"
 paths:
   /biblios:
     post:
-      operationId: addBiblio
+      operationId: addBiblio_fi
       produces:
         - application/json
       responses:
@@ -42,7 +42,7 @@ paths:
       x-mojo-to: Fi::NatLibFi::Biblios::Biblios#add
   "/biblios/{biblio_id}":
     put:
-      operationId: updateBiblio
+      operationId: updateBiblio_fi
       parameters:
         - $ref: openapi/parameters.yaml#/biblio_id_pp
       produces:
